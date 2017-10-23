@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "live-server public/",
-    "build-babel":
-      "babel src/app.jsx --out-file=public/scripts/app.js --presets=env,react --watch",
+    "build-babel": "babel src/app.jsx --out-file=public/scripts/app.js --presets=env,react --watch",
     "build": "webpack --watch"
   },
   "author": "Nicky Meuleman",
