@@ -1,3 +1,5 @@
-console.log('app.js  is running!!');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import IndecisionApp from './components/IndecisionApp';
 
-const master = 'test';
+ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
