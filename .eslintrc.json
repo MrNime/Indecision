@@ -17,6 +17,7 @@
         "vars": "local",
         "args": "none"
       }
-    ]
+    ],
+    "react/sort-comp": 0
   }
 }
