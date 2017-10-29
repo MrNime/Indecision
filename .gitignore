@@ -1,4 +1,5 @@
-node_modules
+node_modules/
+.vscode/
 chrome_2017-10-25_19-58-03.png
 Indecision.rar
 Indecision-no-node-modules.rar
