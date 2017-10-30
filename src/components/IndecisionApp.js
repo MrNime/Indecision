@@ -1,6 +1,7 @@
 import React from 'react';
 import AddOption from './AddOption';
 import Header from './Header';
+import Footer from './Footer';
 import Options from './Options';
 import Action from './Action';
 import OptionModal from './OptionModal';
@@ -40,7 +41,6 @@ export default class IndecisionApp extends React.Component {
     }));
   };
   componentDidMount() {
-    console.log('fetching data');
     try {
       const json = localStorage.getItem('options');
       const options = JSON.parse(json);
@@ -53,7 +53,6 @@ export default class IndecisionApp extends React.Component {
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.options.length !== this.state.options.length) {
-      console.log('saving data');
       const json = JSON.stringify(this.state.options);
       localStorage.setItem('options', json);
     }
@@ -65,19 +64,22 @@ export default class IndecisionApp extends React.Component {
     const subtitle = 'Put your life in the hands of a computer';
 
     return (
-      <div>
-        <Header subtitle={subtitle} />
-        <div className="container">
-          <Action hasOptions={this.state.options.length > 0} handlePick={this.handlePick} />
-          <div className="widget">
-            <Options
-              options={this.state.options}
-              handleDeleteOptions={this.handleDeleteOptions}
-              handleDeleteOption={this.handleDeleteOption}
-            />
-            <AddOption handleAddOption={this.handleAddOption} />
+      <div className="indecision-app">
+        <main>
+          <Header subtitle={subtitle} />
+          <div className="container">
+            <Action hasOptions={this.state.options.length > 0} handlePick={this.handlePick} />
+            <div className="widget">
+              <Options
+                options={this.state.options}
+                handleDeleteOptions={this.handleDeleteOptions}
+                handleDeleteOption={this.handleDeleteOption}
+              />
+              <AddOption handleAddOption={this.handleAddOption} />
+            </div>
           </div>
-        </div>
+        </main>
+        <Footer />
         <OptionModal
           selectedOption={this.state.selectedOption}
           handleClearSelectedOption={this.handleClearSelectedOption}
