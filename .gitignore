@@ -1,4 +1,8 @@
 node_modules/
+public/bundle.js
+public/bundle.js.map
+public/styles.css
+public/styles.css.map
 .vscode/
 chrome_2017-10-25_19-58-03.png
 Indecision.rar
